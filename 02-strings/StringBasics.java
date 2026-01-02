@@ -23,7 +23,12 @@ public class StringBasics {
      */
     public static String reverse(String s) {
         // TODO: your code here
-        throw new UnsupportedOperationException("TODO");
+        String reversed = "";
+        char[] chars = s.toCharArray();
+        for (int i = chars.length - 1; i >= 0; i--){
+            reversed = reversed + chars[i];
+        }
+        return reversed;
     }
 
     /**
