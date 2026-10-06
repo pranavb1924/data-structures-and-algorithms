@@ -55,7 +55,7 @@ Work through the topics in order. Later ones build on earlier ones.
 
 ### Progress
 
-- [ ] 01 Arrays
+- [x] 01 Arrays
 - [ ] 02 Strings
 - [ ] 03 Recursion
 - [ ] 04 Searching

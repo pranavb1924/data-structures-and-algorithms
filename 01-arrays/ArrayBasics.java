@@ -24,7 +24,11 @@ public class ArrayBasics {
      */
     public static int sum(int[] nums) {
         // TODO: your code here
-        throw new UnsupportedOperationException("TODO");
+        int total = 0;
+        for (int n: nums){
+            total += n;
+        }
+        return total;
     }
 
     /**
@@ -35,7 +39,12 @@ public class ArrayBasics {
      */
     public static int max(int[] nums) {
         // TODO: your code here
-        throw new UnsupportedOperationException("TODO");
+        int maxNum = Integer.MIN_VALUE;
+        for (int n : nums){
+            maxNum = Math.max(maxNum, n);
+        }
+
+        return maxNum;
     }
 
     /**
@@ -45,7 +54,13 @@ public class ArrayBasics {
      */
     public static int indexOf(int[] nums, int target) {
         // TODO: your code here
-        throw new UnsupportedOperationException("TODO");
+        for (int i = 0; i < nums.length; i++){
+            if (nums[i] == target){
+                return i;
+            }
+        }
+
+        return -1;
     }
 
     /**
@@ -55,7 +70,13 @@ public class ArrayBasics {
      */
     public static int countEvens(int[] nums) {
         // TODO: your code here
-        throw new UnsupportedOperationException("TODO");
+        int count = 0;
+        for(int n : nums){
+            if (n % 2 == 0){
+                count++;
+            }
+        }
+        return count;
     }
 
     /**
@@ -66,7 +87,14 @@ public class ArrayBasics {
      */
     public static boolean isSorted(int[] nums) {
         // TODO: your code here
-        throw new UnsupportedOperationException("TODO");
+        boolean sorted = true;
+        for (int i = 1; i < nums.length; i++){
+            if (nums[i] < nums[i-1]){
+                sorted = false;
+                break;  
+            }
+        }
+        return sorted;
     }
 
     /**
@@ -76,7 +104,15 @@ public class ArrayBasics {
      */
     public static void reverseInPlace(int[] nums) {
         // TODO: your code here
-        throw new UnsupportedOperationException("TODO");
+        int[] reversed = new int[nums.length];
+
+        for (int i = 0, j = reversed.length - 1; i < nums.length && j >= 0; i++, j--){
+            reversed[j] = nums[i];
+        }
+
+        for (int i = 0; i < nums.length; i++){
+            nums[i] = reversed[i];
+        }
     }
 
     /**
@@ -87,7 +123,20 @@ public class ArrayBasics {
      */
     public static int secondLargest(int[] nums) {
         // TODO: your code here
-        throw new UnsupportedOperationException("TODO");
+        int largest = Integer.MIN_VALUE;
+        int secondLargest = Integer.MIN_VALUE;
+
+        for (int n : nums){
+           if (n > largest){
+            secondLargest = largest;
+            largest = n;
+           }
+
+           if (n >secondLargest && n < largest){
+            secondLargest = n;
+           }
+        }
+        return secondLargest;
     }
 
     /**
@@ -97,7 +146,18 @@ public class ArrayBasics {
      */
     public static void moveZerosToEnd(int[] nums) {
         // TODO: your code here
-        throw new UnsupportedOperationException("TODO");
+        int[] temp = new int[nums.length];
+        int count = 0;
+        for (int i = 0; i < nums.length; i++){
+            if (nums[i] == 0){
+                count++;
+                continue;
+            }
+            temp[i - count] = nums[i];
+        }
+        for (int i = 0; i < nums.length; i++){
+            nums[i] = temp[i];
+        }
     }
 
     // ---------------------------------------------------------------------
